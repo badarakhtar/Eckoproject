@@ -4,12 +4,10 @@ The project is done in python with sqlite3 database.
 
 The following python files are created:
 1. Attendance.py -> The command for table creation is done in this file. 
+
 import sqlite3
-
 connection = sqlite3.connect("attendance.db")
-
 cursor = connection.cursor()
-
 sqlCommand = '''create table if not exists attendance(
             rollNo integer,
             fname varchar(20),
@@ -22,10 +20,9 @@ cursor.execute(sqlCommand)
 
 
 2. InputData.py -> This file contains code for inserting values in the table. The stu.csv file which was given in the instructor notes is parsed into the function and the record was split with ','.
+
 import sqlite3
 import datetime
-
-
 def insert(rollNo, fname, lname, day, status):
     conn = sqlite3.connect('attendance.db')
     cur = conn.cursor()
@@ -63,8 +60,8 @@ record(table)
 print('Record inserted Successfully')
 
 3. StudentInfo.py -> This file contains the code for fetching the record by the roll number provided. The exceptions are properly handled and the modified code does not show error while executing.
-import sqlite3
 
+import sqlite3
 try:
     roll = input("Enter Roll No of Student: ")
 
@@ -106,10 +103,9 @@ finally:
     print("Try for another rollNo")
 
 4. MonthAttendance -> This file contains code for fetching the records of a particular month from the attendance table. The start and end date are hard coded in the program.
+
 import sqlite3
 import datetime
-
-
 def view():
     conn = sqlite3.connect('attendance.db')
     cursor = conn.cursor()
@@ -135,9 +131,9 @@ feed(data)
 print('Record fetched Successfully')
 
 5. YearlyAttendance -> This file contains code to fetch the record based on a particular year a unique roll no. The exceptions and errors are properly handled.
+
 import sqlite3
 import datetime
-
 try:
     r = input("Enter RollNo: ")
     y = input("Enter year: ")
