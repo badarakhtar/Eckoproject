@@ -20,9 +20,6 @@ sqlCommand = '''create table if not exists attendance(
 print('attendance database created successfully')
 cursor.execute(sqlCommand)
 
-# connection.commit()
-#
-# connection.close()
 
 2. InputData.py -> This file contains code for inserting values in the table. The stu.csv file which was given in the instructor notes is parsed into the function and the record was split with ','.
 import sqlite3
@@ -112,9 +109,6 @@ finally:
 import sqlite3
 import datetime
 
-# rollNo = int(input("Enter roll No: "))
-# month = int(input("Enter month in digits: "))
-# year = int(input("Enter year: "))
 
 def view():
     conn = sqlite3.connect('attendance.db')
